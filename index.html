@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+   	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">	
+<!-- 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+	<script src="assets/javascript/game.js"></script>
+
+	<title>Gemstone Trading Game</title>
+</head>
+
+<body>
+<div class="jumbotron">
+	<h1>Gemstone Trading Game</h1>
+</div>
+
+<content>
+
+<div class="row">
+	<div class="col-md-6">
+		<div class = "panel panel-primary">
+  			<div class="panel-heading">
+    			<h3 class="panel-title">Game Instructions</h3>
+ 			 </div>
+ 			 <div class="panel-body">
+				<p>It's your lucky day! You found these four precious gems!</p>
+				<p>I am willing to pay the total offer shown here, but you have to guess how many of which gems I will buy for that price.</p>
+				<p>Click on the gems below to add gems to your sale bid.  Each gem will add a little more to your price, and the value of each gem is hidden until you click on it.</p>
+				<p>You can choose any combination of gems, but you have to exactly match my price to get the sale.  Be careful! If your asking price is too high, you lose.</p>
+				<p>Each time you play, the value of the gems will change. Good luck!</p>
+		  	</div>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="panel panel-success">
+					<div class="panel-heading">
+						<h3 class="panel-title">Bargaining Counter</h3>
+					</div>
+					<div class="panel-body">
+						Today's Offer: $<span id="spanOffer">0</span><br/>
+						Your Bid: $<span id="spanBid">0</span><br/>
+						Gems in today's Transaction: <span id="spanCountGems">0</span><br/>
+					</div>
+				</div>		
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="panel panel-warning">
+					<div class="panel-heading">
+						<h3 class="panel-title">Sales Ledger</h3>
+					</div>
+					<div class="panel-body">
+						My Cash: $<span id="spanUserWins">0</span><br/>
+						Sales Lost: $<span id="spanComputerWins">0</span><br/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="row centered">
+	<div class="col-md-3 images">
+		<div class="gem">
+			<img id="ruby" src="assets/images/ruby.jpg" alt="Ruby" title="Click to add a ruby to your offer">
+		</div>
+	</div>
+	<div class="col-md-3 images">
+		<div class="gem">
+			<img id="emerald" src="assets/images/emerald.jpg" alt="Emerald" title="Click to add an emerald to your offer">
+		</div>
+	</div>
+	<div class="col-md-3 images">
+		<div class="gem">
+			<img id="sapphire" src="assets/images/sapphire.jpg" alt="Sapphire" title="Click to add a sapphire to your offer">
+		</div>
+	</div>
+	<div class="col-md-3 images">
+		<div class="gem">
+			<img id="amethyst" src="assets/images/amethyst.jpg" alt="Amethyst" title="Click to add an amethyst to your offer">
+		</div>
+	</div>
+</div>
+
+</content>
+
+<footer>
+	<h6>Copyright &copy; 2017 Chryssa Jones</h6>
+</footer>
+
+</body>
+</html>
+
+<!-- Pseudocode starts here
+
+Game logic:
+Start game by generating a random price to match and four random values for the gems.
+Set start score to zero
+
+To play the game, the user must click on the gems to try to match the set price without going over.  If you match the price, you win!  If you go over, you lose!
+
+Win = increment win counter by 1 and reset game
+Lose = increment lose counter by 1 and reset game
+
+-->

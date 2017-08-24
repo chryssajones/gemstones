@@ -1,0 +1,19 @@
+body {
+	background: url(../images/cavern-background.jpg);
+	background-size: cover;
+	z-index: -99;
+	text-align: center;
+}
+
+img {
+	height: 100px;
+	margin: 10px;
+	border-radius: 10px;
+}
+
+footer {
+	background: #222;
+	margin: 40px 0 0 0;
+	padding: 10px;
+}
+
