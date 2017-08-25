@@ -38,6 +38,7 @@ function reset(){
   sapphirePrice = price(); console.log("sapphire = $" + sapphirePrice);
   totalGems = 0;
   userBid = 0;
+  spanOffer.textContent = machineOffer;
 }
 
 function onClick(gemsIndex){
@@ -45,7 +46,8 @@ function onClick(gemsIndex){
   totalGems ++;
   spanBid.textContent = userBid;
   spanCountGems.textContent = totalGems;
-  // checkBid();
+  console.log(userBid);
+  checkBid(userBid);
 }
 
 reset();
@@ -70,24 +72,27 @@ $("#amethyst").click(function(){
     onClick(3);
 });
 
-// function checkBid(a) {
-//   if (a = machineOffer) {
-//     //user wins
-//   }
+function checkBid(a) {
+  console.log(a, machineOffer);
 
-//   else if (a < machineOffer) {
-//     //do nothing
-//   }
+  if (a === machineOffer) {
+    alert("You matched my sale price! I will pay $" + machineOffer);
+    sales += machineOffer;
+    spanUserWins.textContent = sales;
+    playAgain();
+  } else if (a > machineOffer) {
+    alert("That's more than I'm willing to pay.  No sale!");
+    losses += machineOffer;
+    spanComputerWins.textContent = losses;
+    playAgain();
+  }
+}
 
-//   else {
-//     //user loses
-//   }
-// }
-
-spanOffer.textContent = machineOffer;
-spanUserWins.textContent = sales;
-spanComputerWins.textContent = losses;
-
-
+function playAgain() {
+    var again = alert("Do you want to play again?")
+      if (again = true) {
+        reset();
+      }
+    };
 
 });
