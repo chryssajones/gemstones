@@ -1,8 +1,12 @@
+$(document).ready(function(){
+
 console.log("JavaScript file is loaded")
 
-var machineOffer;
-var userBid;
-var totalGems;
+var gems = ["ruby", "emerald", "sapphire", "amethyst"];
+
+var machineOffer = 0;
+var userBid = 0;
+var totalGems = 0;
 var sales = 0;
 var losses = 0;
 var rubyPrice = 0;
@@ -16,7 +20,6 @@ var spanCountGems = document.getElementById("spanCountGems");
 var spanUserWins = document.getElementById("spanUserWins");
 var spanComputerWins = document.getElementById("spanComputerWins");
 
-
 function offer() {
   var o = Math.round(((Math.random() * 100) + 10));
   return o;
@@ -26,7 +29,6 @@ function price() {
   var p = Math.floor((Math.random() * 10) + 1);
   return p;
 } 
-
 
 function reset(){
   machineOffer = offer(); console.log("Today's offer: $" + machineOffer);
@@ -38,52 +40,54 @@ function reset(){
   userBid = 0;
 }
 
+function onClick(gemsIndex){
+  console.log("The " + gems[gemsIndex] + " was clicked.");
+  totalGems ++;
+  spanBid.textContent = userBid;
+  spanCountGems.textContent = totalGems;
+  // checkBid();
+}
+
 reset();
 
 $("#ruby").click(function(){
-    console.log("The ruby was clicked.");
     userBid += rubyPrice;
-    totalGems ++
-    checkBid();
+    onClick(0);
 });
 
 $("#emerald").click(function(){
-    console.log("The emerald was clicked.");
     userBid += emeraldPrice;
-    totalGems ++
-    checkBid();
+    onClick(1);
 });
 
 $("#sapphire").click(function(){
-    console.log("The sapphire was clicked.");
     userBid += sapphirePrice;
-    totalGems ++
-    checkBid();
+    onClick(2);
 });
 
 $("#amethyst").click(function(){
-    console.log("The amethyst was clicked.");
     userBid += amethystPrice;
-    totalGems ++
-    checkBid(userBid);
+    onClick(3);
 });
 
-function checkBid(a) {
-  if (a = machineOffer) {
-    //user wins
-  }
+// function checkBid(a) {
+//   if (a = machineOffer) {
+//     //user wins
+//   }
 
-  else if (a < machineOffer) {
-    //do nothing
-  }
+//   else if (a < machineOffer) {
+//     //do nothing
+//   }
 
-  else {
-    //user loses
-  }
-}
+//   else {
+//     //user loses
+//   }
+// }
 
 spanOffer.textContent = machineOffer;
-spanBid.textContent = userBid;
-spanCountGems.textContent = totalGems;
 spanUserWins.textContent = sales;
 spanComputerWins.textContent = losses;
+
+
+
+});
