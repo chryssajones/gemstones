@@ -21,12 +21,12 @@ var spanUserWins = document.getElementById("spanUserWins");
 var spanComputerWins = document.getElementById("spanComputerWins");
 
 function offer() {
-  var o = Math.round(((Math.random() * 100) + 10));
+  var o = Math.floor(((Math.random() * 1000) + 50));
   return o;
 }
 
 function price() {
-  var p = Math.floor((Math.random() * 10) + 1);
+  var p = Math.floor((Math.random() * 150) + 10);
   return p;
 } 
 
@@ -39,6 +39,7 @@ function reset(){
   totalGems = 0;
   userBid = 0;
   spanOffer.textContent = machineOffer;
+  spanBid.textContent = 0;
 }
 
 function onClick(gemsIndex){
