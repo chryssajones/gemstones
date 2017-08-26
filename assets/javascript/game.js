@@ -40,6 +40,7 @@ function reset(){
   userBid = 0;
   spanOffer.textContent = machineOffer;
   spanBid.textContent = 0;
+  spanCountGems.textContent = 0;
 }
 
 function onClick(gemsIndex){
